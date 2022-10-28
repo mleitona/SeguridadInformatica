@@ -34,10 +34,10 @@ def Main():
     c_partial=Cliente.generate_partial_key()
     s_partial=Servidor.generate_partial_key()
     ################################################ (clave como tal)
-    c_full=Cliente.generate_full_key(m_partial)
+    c_full=Cliente.generate_full_key(c_partial)
     s_full=Servidor.generate_full_key(s_partial)
     
-    if c_full==sfull:
+    if c_full==s_full:
         archivo = open("mensajeentrada.txt","r")
         mensaje = str(archivo.readline().lower())
         codigo =  ds.encriptacion(mensaje)
